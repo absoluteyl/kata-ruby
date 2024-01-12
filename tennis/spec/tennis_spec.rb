@@ -50,4 +50,18 @@ RSpec.describe Tennis, '#score' do
       score_should_be('love fifteen')
     end
   end
+
+  context 'when player 2 goals twice' do
+    it 'should be love thirty' do
+      given_player2_score_is(2)
+      score_should_be('love thirty')
+    end
+  end
+
+  context 'when player 2 goals 3 times' do
+    it 'should be love forty' do
+      given_player2_score_is(3)
+      score_should_be('love forty')
+    end
+  end
 end
