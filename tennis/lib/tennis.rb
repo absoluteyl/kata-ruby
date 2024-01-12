@@ -8,6 +8,7 @@ class Tennis
 
   def score
     return 'fifteen love' if @player1_score == 15
+    return 'thirty love' if @player1_score == 30
 
     'love all'
   end
