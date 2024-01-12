@@ -3,8 +3,8 @@ class Tennis
   attr_accessor :player1_score
 
   SCORE_STRINGS = {
-    15 => 'fifteen',
-    30 => 'thirty'
+    1 => 'fifteen',
+    2 => 'thirty'
   }
 
   def initialize
@@ -18,6 +18,6 @@ class Tennis
   end
 
   def player1_goals
-    @player1_score += 15
+    @player1_score += 1
   end
 end
