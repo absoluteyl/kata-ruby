@@ -22,4 +22,12 @@ RSpec.describe Tennis, '#score' do
       score_should_be('fifteen love')
     end
   end
+
+  context 'when player 1 goals twice' do
+    it 'should be thirty love' do
+      @tennis.player1_goals
+      @tennis.player1_goals
+      score_should_be('thirty love')
+    end
+  end
 end
