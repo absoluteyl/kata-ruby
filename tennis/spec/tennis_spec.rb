@@ -1,6 +1,9 @@
 require 'tennis'
 
 RSpec.describe Tennis, '#score' do
+  def score_should_be(expected_score)
+    expect(@tennis.score).to eq(expected_score)
+  end
 
   before do
     @tennis = Tennis.new
@@ -8,7 +11,7 @@ RSpec.describe Tennis, '#score' do
 
   context 'when initialize' do
     it 'should be love all' do
-      expect(@tennis.score).to eq('love all')
+      score_should_be('love all')
     end
   end
 
@@ -16,7 +19,7 @@ RSpec.describe Tennis, '#score' do
     it 'should be fifteen love' do
       @tennis
       @tennis.player1_goals
-      expect(@tennis.score).to eq('fifteen love')
+      score_should_be('fifteen love')
     end
   end
 end
