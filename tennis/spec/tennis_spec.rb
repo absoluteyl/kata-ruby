@@ -17,7 +17,6 @@ RSpec.describe Tennis, '#score' do
 
   context 'when player 1 goals' do
     it 'should be fifteen love' do
-      @tennis
       @tennis.player1_goals
       score_should_be('fifteen love')
     end
