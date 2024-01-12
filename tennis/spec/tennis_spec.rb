@@ -5,6 +5,10 @@ RSpec.describe Tennis, '#score' do
     score.times { @tennis.player1_goals }
   end
 
+  def given_player2_score_is(score)
+    score.times { @tennis.player2_goals }
+  end
+
   def score_should_be(expected_score)
     expect(@tennis.score).to eq(expected_score)
   end
@@ -37,6 +41,13 @@ RSpec.describe Tennis, '#score' do
     it 'should be forty love' do
       given_player1_score_is(3)
       score_should_be('forty love')
+    end
+  end
+
+  context 'when player 2 goals' do
+    it 'should be love fifteen' do
+      given_player2_score_is(1)
+      score_should_be('love fifteen')
     end
   end
 end
