@@ -4,7 +4,8 @@ class Tennis
 
   SCORE_STRINGS = {
     1 => 'fifteen',
-    2 => 'thirty'
+    2 => 'thirty',
+    3 => 'forty'
   }
 
   def initialize
