@@ -5,6 +5,10 @@ RSpec.describe Tennis, '#score' do
     score.times { @tennis.player1_goals }
   end
 
+  def given_player1_name_is(name)
+    @tennis.player1_name = name
+  end
+
   def given_player2_score_is(score)
     score.times { @tennis.player2_goals }
   end
@@ -86,6 +90,16 @@ RSpec.describe Tennis, '#score' do
       given_player1_score_is(3)
       given_player2_score_is(3)
       score_should_be('deuce')
+    end
+  end
+
+  context 'when player1 goals after deuce' do
+    it 'should be player1 adv' do
+      given_player1_name_is('Henry')
+      given_player1_score_is(3)
+      given_player2_score_is(3)
+      given_player1_score_is(1)
+      score_should_be('Henry adv')
     end
   end
 end
