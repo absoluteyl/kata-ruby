@@ -24,7 +24,11 @@ class Tennis
       end
     else
       if @player1_score > 3 || @player2_score > 3
-        return "#{adv_player_name} adv" if (@player1_score - @player2_score).abs == 1
+        if (@player1_score - @player2_score).abs == 1
+          return "#{adv_player_name} adv"
+        else
+          return "#{adv_player_name} win"
+        end
       else
         return "#{SCORE_STRINGS[@player1_score]} #{SCORE_STRINGS[@player2_score]}"
       end
