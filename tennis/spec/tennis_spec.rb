@@ -80,4 +80,12 @@ RSpec.describe Tennis, '#score' do
       score_should_be('thirty all')
     end
   end
+
+  context 'when score is 3:3' do
+    it 'should be deuce' do
+      given_player1_score_is(3)
+      given_player2_score_is(3)
+      score_should_be('deuce')
+    end
+  end
 end
