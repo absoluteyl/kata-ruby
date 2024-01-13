@@ -16,8 +16,7 @@ class Tennis
 
   def score
     return "#{SCORE_STRINGS[@player1_score]} all"  if @player1_score == @player2_score
-    return "#{SCORE_STRINGS[@player1_score]} love" if @player1_score != 0
-    "love #{SCORE_STRINGS[@player2_score]}" if @player2_score != 0
+    "#{SCORE_STRINGS[@player1_score]} #{SCORE_STRINGS[@player2_score]}" if @player1_score != 0 || @player2_score != 0
   end
 
   def player1_goals
