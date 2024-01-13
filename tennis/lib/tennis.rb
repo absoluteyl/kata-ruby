@@ -10,6 +10,14 @@ class Tennis
     3 => 'forty'
   }
 
+  STATE_STRINGS = {
+    :all => 'all',
+    :deuce => 'deuce',
+    :adv => 'adv',
+    :win => 'win'
+
+  }
+
   def initialize
     @player1_score = 0
     @player2_score = 0
@@ -18,16 +26,16 @@ class Tennis
   def score
     if is_same_score
       if @player1_score < 3
-        return "#{SCORE_STRINGS[@player1_score]} all"
+        return "#{SCORE_STRINGS[@player1_score]} #{STATE_STRINGS[:all]}"
       else
-        return "deuce"
+        return STATE_STRINGS[:deuce]
       end
     else
       if @player1_score > 3 || @player2_score > 3
         if (@player1_score - @player2_score).abs == 1
-          return "#{adv_player_name} adv"
+          return "#{adv_player_name} #{STATE_STRINGS[:adv]}"
         else
-          return "#{adv_player_name} win"
+          return "#{adv_player_name} #{STATE_STRINGS[:win]}"
         end
       else
         return "#{SCORE_STRINGS[@player1_score]} #{SCORE_STRINGS[@player2_score]}"
