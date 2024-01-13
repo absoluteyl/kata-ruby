@@ -16,8 +16,7 @@ class Tennis
   end
 
   def score
-    return "#{@player2_name} adv" if @player2_score == 4
-    return "#{@player1_name} adv" if @player1_score == 4
+    return "#{adv_player_name} adv" if @player1_score == 4 || @player2_score == 4
     if is_same_score
       if @player1_score < 3
         return "#{SCORE_STRINGS[@player1_score]} all"
@@ -40,5 +39,9 @@ class Tennis
 
   def is_same_score
     @player1_score == @player2_score
+  end
+
+  def adv_player_name
+    @player1_score > @player2_score ? @player1_name : @player2_name
   end
 end
