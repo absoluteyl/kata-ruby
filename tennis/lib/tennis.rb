@@ -16,12 +16,9 @@ class Tennis
   end
 
   def score
-    if @player2_score == 4
-      return "#{@player2_name} adv"
-    end
-    if @player1_score == 4
-      return "#{@player1_name} adv"
-    end
+    return "#{@player2_name} adv" if @player2_score == 4
+    return "#{@player1_name} adv" if @player1_score == 4
+
     if @player1_score == @player2_score
       if @player1_score < 3
         return "#{SCORE_STRINGS[@player1_score]} all"
