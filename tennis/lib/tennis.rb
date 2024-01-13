@@ -14,6 +14,7 @@ class Tennis
   end
 
   def score
+    return 'thirty all' if @player1_score == 2 && @player2_score == 2
     return 'fifteen all' if @player1_score == 1 && @player2_score == 1
     return "#{SCORE_STRINGS[@player1_score]} love" if @player1_score != 0
     return "love #{SCORE_STRINGS[@player2_score]}" if @player2_score != 0
