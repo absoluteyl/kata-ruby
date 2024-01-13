@@ -23,9 +23,12 @@ class Tennis
         return "deuce"
       end
     else
-      return "#{adv_player_name} adv" if @player1_score == 4 || @player2_score == 4
+      if @player1_score > 3 || @player2_score > 3
+        return "#{adv_player_name} adv" if (@player1_score - @player2_score).abs == 1
+      else
+        return "#{SCORE_STRINGS[@player1_score]} #{SCORE_STRINGS[@player2_score]}"
+      end
     end
-    "#{SCORE_STRINGS[@player1_score]} #{SCORE_STRINGS[@player2_score]}" if @player1_score != 0 || @player2_score != 0
   end
 
   def player1_goals
