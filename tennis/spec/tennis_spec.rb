@@ -116,4 +116,14 @@ RSpec.describe Tennis, '#score' do
       score_should_be('Jack adv')
     end
   end
+
+  context 'when score is 4:4' do
+    it 'should be deuce' do
+      given_player1_score_is(3)
+      given_player2_score_is(3)
+      given_player1_score_is(1)
+      given_player2_score_is(1)
+      score_should_be('deuce')
+    end
+  end
 end
