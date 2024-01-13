@@ -1,5 +1,6 @@
 class Tennis
 
+  attr_accessor :player1_name, :player2_name
   attr_accessor :player1_score, :player2_score
 
   SCORE_STRINGS = {
@@ -15,6 +16,9 @@ class Tennis
   end
 
   def score
+    if @player1_score == 4
+      return "#{@player1_name} adv"
+    end
     if @player1_score == @player2_score
       if @player1_score < 3
         return "#{SCORE_STRINGS[@player1_score]} all"
