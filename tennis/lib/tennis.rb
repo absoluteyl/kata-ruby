@@ -3,6 +3,7 @@ class Tennis
   attr_accessor :player1_score, :player2_score
 
   SCORE_STRINGS = {
+    0 => 'love',
     1 => 'fifteen',
     2 => 'thirty',
     3 => 'forty'
@@ -14,12 +15,9 @@ class Tennis
   end
 
   def score
-    return 'thirty all' if @player1_score == 2 && @player2_score == 2
-    return 'fifteen all' if @player1_score == 1 && @player2_score == 1
+    return "#{SCORE_STRINGS[@player1_score]} all"  if @player1_score == @player2_score
     return "#{SCORE_STRINGS[@player1_score]} love" if @player1_score != 0
-    return "love #{SCORE_STRINGS[@player2_score]}" if @player2_score != 0
-
-    'love all'
+    "love #{SCORE_STRINGS[@player2_score]}" if @player2_score != 0
   end
 
   def player1_goals
